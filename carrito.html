@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="carrito.css">
+    <title>Carrito de Compras</title>
+
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Font awesome-->
+    <script src="https://kit.fontawesome.com/aeeaca3c2d.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+
+<!--------------------------------------------------------HEADER----------------------------------------------------------------->
+<header id="header" class="position-fixed">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="/index.html">
+        <div class="logo d-flex justify-content-center align-items-center">
+          <img src="/Images/asd.png">
+        </div>
+      </a>
+      
+      <div class="icons order-lg-2 dropdown">
+      <a id="cartDropdown" role="button" aria-expanded="false">
+          <!-- Bubble alert -->
+          <span id="BubbleAlertCarrito" class="top-0 start-100 translate-middle badge bg-danger">5</span> 
+          <i id="cart_icon" class="fa fa-shopping-cart pe-5"></i>
+          <ul class="dropdown-menu mt-3" id="cart-container" aria-labelledby="cartDropdown">
+            
+            <p class="dropdown-item fw-bold fst-italic text-center">Carrito</p> 
+            <li><hr class="dropdown-divider"></li>
+            <ul id="StylesUl">
+              <li id="StylesProducto" key="name">
+                <img src="/Images/Home_Page/img/unknown_product.png" width="50" height="32" />
+                <p class="fw-bold mt-2">Hamburguesa</p><span class="mt-2">5</span>
+              </li>
+              <li id="StylesProducto" key="name">
+                <img src="/Images/Home_Page/img/unknown_product.png" width="50" height="32" />
+                <p class="fw-bold mt-2">Pizza</p><span class="mt-2">5</span>
+              </li>
+            </ul>
+            <div id="StylesButtonCarro">
+              <button class="btn btn-warning" id="Carro">Ir al carro</button>
+            </div>
+          </ul>
+        </a>
+        <a>
+  
+          <i class="fa fa-heart pe-5"></i>
+        </a>
+        <!-- Acomodamiento de contador-->
+        <style>
+           #BubbleAlertCarrito {
+            margin-right: -58px;
+           }
+    
+        </style>
+        
+        <a id="loginDropdown" role="button" aria-expanded="false">
+          <i class="fa fa-solid fa-user-secret pe-5" id="login_icon"></i>
+          <ul class="dropdown-menu" id="options-container" aria-labelledby="loginDropdown">
+            <p class="dropdown-item fw-bold fst-italic">Opciones</p> 
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/User/profile">Perfil</a></li>
+            <li><a id="logout_button" class="dropdown-item" href="">Cerrar sesión</a></li>
+          </ul>
+        </a>
+        
+        <a><i class="fa fa-search pe-5" id="icono-busqueda"></i></a>
+      </div>
+      <!--Menu hamburguesa cuando sea responsive-->
+      <button class = "navbar-toggler border-0" type="button" data-bs-toggle="collapse"  data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="menu collapse navbar-collapse order-lg-1 " id="navMenu">
+        <ul class="navbar-nav d-flex text-center justify-content mx-auto mb-2 mb-lg-0 me-auto">
+          <li class="nav-item px-2 py-2">
+            <a id="inicio-menu" class="desplazar nav-link text-uppercase text-dark fst-normal" href="#">Inicio</a>
+          </li>
+          <li class="nav-item px-2 py-2">
+            <a class="desplazar nav-link text-uppercase text-dark fst-normal" href="#sobre">Nosotros</a>
+          </li>
+          <li class="nav-item px-2 py-2">
+            <a class="desplazar nav-link text-uppercase text-dark fst-normal" href="#contacto">Contacto</a>
+          </li>
+          <li class="nav-item dropdown px-2 py-2">
+            <a class="desplazar nav-link text-uppercase text-dark fst-normal" href="#explore-food">
+              Pedidos
+            </a>
+          </li>
+        </ul>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>  
+
+
+
+
+
+
+    <!-- SECCION SLIDER -->
+      <section class="py-5">
+          <div class="container-fluid px-6 px-lg-5 my-5 bg-warning py-3" id="Slider-Carrito">
+              <div class="text-center text-white" id="contenedorCarr">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-cart-check text-dark" viewBox="0 0 16 16">
+                  <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </svg>
+                  <p class="lead fw-normal text-dark mb-0 mt-4 fw-bold">Tus Productos Agregados.</p>
+              </div>
+          </div>
+      </section>
+          
+            <div class="container px-4 px-lg-5">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="table-responsive">
+                          <table class="table table-hover table-striped table-warning table-sm">
+                              <thead>
+                                  <tr>
+                                      <th>Producto</th>
+                                      <th>Precio</th>
+                                      <th>Cantidad</th>
+                                      <th>Sub Total</th>
+                                  </tr>
+                              </thead>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+
+
+          
+            
+
+              <div class="container">
+                <div class="row d-flex align-items-center justify-content-center" id="totalOrder">
+                  <div class="col-md-6">
+                    <div class="table-responsive">
+                      <table class="table responsive table-hover">
+                          <thead>
+                              <tr>
+                                  <th class="text-center">Total</th>
+                              </tr>
+                          </thead>
+                      </table>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ms-auto">
+                        <h4 class="text-center">0.00</h4>
+                        <div class="d-grid gap-2 p-1">                        
+                          <button class="btn btn-success " type="button" id="btnTermPed"> Terminar Pedido</button>
+                        </div>
+                        <div class="d-grid gap-2 p-1">                        
+                          <button class="btn btn-warning" type="button" id="btnVaciar"> Vaciar Carrito </button>
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+     
+
+
+
+
+      <footer class="text-center text-lg-start bg-light text-muted mt-5">
+
+        <div class="container-fluid">
+        
+        <!-- Section: Social media -->
+        <section class="iconos-contact d-flex justify-content-center align-items-center text-center p-4 border-bottom">
+
+          <div>
+            <a href="" class="me-4 text-reset text-decoration-none">
+              <i class="fab fa-facebook-f text-decoration-none"></i>
+            </a>
+            <a href="" class="me-4 text-reset text-decoration-none">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset text-decoration-none">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset text-decoration-none">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </section>
+        <!-- Section: Redes sociales -->
+      
+        <!-- Section: Links  -->
+        <section id="section-contact" class="">
+          <div class="text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3"></i>InfinusLight
+                </h6>
+                <p>
+                  Somos una empresa dedicada al desarrollo de software, brindandoles a nuestros clientes un excelente servicio.
+                </p>
+              </div>
+        
+              <!-- Grid column -->
+              <div class="enlaces col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Enlaces Útiles
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset text-decoration-none">Precios</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset text-decoration-none">Ubicación</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset text-decoration-none">Pedidos</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset text-decoration-none">Ayuda</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+        
+              <!-- Grid column -->
+              <div class="contacto col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Contacto
+                </h6>
+                <p><i class="fas fa-home me-3"></i> Canelones, 665, UY</p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  support@infinuslight.com
+                </p>
+                <p><i class="fas fa-phone me-3"></i> + 096 456 879</p>
+                <!--  <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p> -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2022 Copyright:
+        <a class="text-reset fw-bold text-decoration-none" href="http://infinuslight.com/">InfinusLight.com</a>
+      </div>
+    </footer>     
+ </body>
+</html>
